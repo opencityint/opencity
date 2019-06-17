@@ -2,3 +2,13 @@
 	width: 300px;
 	margin: auto;
 }
+.label { 
+	display: inline-block; 
+	width: 110px;
+}
+input {
+	margin-bottom: 10px;
+}
+select {
+	margin-bottom: 10px;
+}

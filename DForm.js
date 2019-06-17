@@ -10,8 +10,7 @@ class DForm extends Component {
 			dataob: {
 				"name" : "your name here",
 				"email" : "hello@world.org"
-			},
-			form: {}
+			}
 		}
 	}
 	setSkill = (s) => {
@@ -29,6 +28,12 @@ class DForm extends Component {
 					}
 				}
 			}
+			// remove procrastinated checkboxes
+			for(let c in ob) {
+				if(ob[c] === false) {
+					delete ob[c];
+				}
+			}	
 		} else {
 			if(Object.keys(this.state.dataob).length > 0) {
 				ob = {};
@@ -80,17 +85,20 @@ const dform = {
 		"audio" : {
 			"mics":"textfield",
 			"desk":"textfield",
-			"compressors":"textfield"
+			"compressors":"textfield",
+			"ponytail":"checkbox"
 		},
 		"video" : {
 			"camera":"textfield",
 			"lenses":"textfield",
-			"lights":"textfield"
+			"lights":"textfield",
+			"baseball hat":"checkbox"
 		},
 		"developer" : {
 			"laptop":"textfield",
 			"languages":"textfield",
-			"frameworks":"textfield"
+			"frameworks":"textfield",
+			"t-shirt":"checkbox"
 		}
 	} 
 }

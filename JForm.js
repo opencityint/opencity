@@ -3,8 +3,12 @@ import React, { Component } from 'react';
 class JForm extends Component {
 	onChange = (e) => {
 		let ob = {};
-		ob[e.target.name] = e.target.value;
-		this.setState(ob);	
+		if(e.target.type === "checkbox") {
+			ob[e.target.name] = e.target.checked
+		} else {
+			ob[e.target.name] = e.target.value;
+		}
+		this.setState(ob);
 	}
 	setSkill = (s) => {
 		this.props.setSkill(s.target.value);
@@ -41,18 +45,18 @@ class JForm extends Component {
 		}
 		return (
 			<>
-			<form onSubmit={this.onSubmit}>
-				<input type='submit' />
-				{ this.props.fieldar.map((fld, id) => (
-					 <span key={id}><div className='label'>{fld[0]}</div> {this.returnInputType(fld)}<br /></span>
-				))}
-			</form>
 			<select value={this.props.skill} onChange={this.setSkill}>
 			{def}
 			{ this.props.skills.map((skill, sid) => (
 				<option key={sid} value={skill}>{skill}</option>
 			))}
 			</select>
+			<form onSubmit={this.onSubmit}>
+				<input type='submit' /><br />
+				{ this.props.fieldar.map((fld, id) => (
+					 <span key={id}><div className='label'>{fld[0]}</div> {this.returnInputType(fld)}<br /></span>
+				))}
+			</form>
 			</>
 		)
 	}
