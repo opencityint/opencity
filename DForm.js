@@ -9,7 +9,8 @@ class DForm extends Component {
 			skill: '',
 			dataob: {
 				"name" : "your name here",
-				"email" : "hello@world.org"
+				"email" : "hello@world.org",
+				"date" : "2019-10-31"
 			}
 		}
 	}
@@ -79,7 +80,9 @@ const dform = {
 		"name":"textfield",
 		"phone":"textfield",
 		"city":"textfield",
-		"email":"textfield"
+		"email":"textfield",
+		"bio":"textarea",
+		"date":"date"
 	},
 	"skills" : {
 		"audio" : {
