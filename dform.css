@@ -5,6 +5,7 @@
 .label { 
 	display: inline-block; 
 	width: 110px;
+	vertical-align: top;
 }
 input {
 	margin-bottom: 10px;
